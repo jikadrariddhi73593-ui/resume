@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Riddhi Jikadra | Portfolio</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        inter: ['Inter', 'sans-serif']
+      }
+    }
+  }
+}
+</script>
+
+<style>
+.glass {
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.7);
+}
+</style>
+
+</head>
+
+<body class="font-inter bg-gray-50 text-gray-800">
+
+<!-- NAV -->
+<nav class="flex justify-between items-center px-12 py-5 bg-white shadow-sm sticky top-0 z-50">
+  <h1 class="text-lg font-semibold text-orange-500">Riddhi J.</h1>
+  <div class="space-x-8 text-sm">
+    <a href="#projects" class="hover:text-orange-500">Projects</a>
+    <a href="#skills" class="hover:text-orange-500">Skills</a>
+    <a href="#about" class="hover:text-orange-500">About</a>
+    <a href="#contact" class="hover:text-orange-500">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="px-10 py-20">
+
+  <div class="max-w-6xl mx-auto grid md:grid-cols-2 items-center gap-10">
+
+    <!-- LEFT IMAGE -->
+    <div class="flex justify-center md:justify-start">
+      <div class="glass p-4 rounded-full shadow-lg hover:scale-105 transition">
+
+        <img src="profile.webp" alt="Riddhi"
+             class="w-64 h-64 object-cover rounded-full border-4 border-white">
+
+      </div>
+    </div>
+
+    <!-- RIGHT CONTENT -->
+    <div>
+      <h1 class="text-4xl md:text-5xl font-semibold leading-tight">
+        Hi, I'm <span class="text-orange-500">Riddhi Jikadra</span>
+      </h1>
+
+      <p class="mt-4 text-lg text-gray-600">
+        Full Stack Developer
+      </p>
+
+      <p class="mt-4 text-gray-500 max-w-md">
+        I build modern, user-friendly web applications with clean design and real-world functionality.
+      </p>
+
+      <!-- BUTTONS -->
+      <div class="mt-6 flex gap-4 flex-wrap">
+        <a href="resume.pdf" target="_blank"
+           class="bg-orange-500 text-white px-6 py-2 rounded shadow hover:bg-orange-600">
+           View Resume
+        </a>
+
+        <a href="resume.pdf" download
+           class="border border-orange-500 text-orange-500 px-6 py-2 rounded hover:bg-orange-50">
+           Download CV
+        </a>
+      </div>
+
+      <!-- CONTACT LINKS -->
+      <div class="mt-6 flex gap-6 flex-wrap text-sm text-gray-600">
+
+        <a href="mailto:jikadrariddhi73593@gmail.com"
+           class="hover:text-orange-500 transition">
+           📧 Email
+        </a>
+
+        <a href="https://github.com/jikadrariddhi73593-ui/js" target="_blank"
+           class="hover:text-orange-500 transition">
+           💻 GitHub
+        </a>
+
+        <a href="https://linkedin.com/in/yourprofile" target="_blank"
+           class="hover:text-orange-500 transition">
+           🔗 LinkedIn
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="px-10 py-20">
+  <h2 class="text-3xl text-center font-semibold mb-12">Projects</h2>
+
+  <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+    <!-- PROJECT -->
+    <div class="glass rounded-xl overflow-hidden shadow hover:scale-105 transition">
+
+      <img src="home.png" class="w-full h-40 object-cover">
+
+      <div class="p-5">
+        <h3 class="font-semibold text-lg">NovelNest</h3>
+
+        <p class="text-sm text-gray-600 mt-2">
+          Online bookstore system.
+        </p>
+
+        <div class="mt-4">
+          <button onclick="openModal('novelnest')"
+            class="text-sm text-orange-500 hover:underline">
+            View Details
+          </button>
+        </div>
+      </div>
+    </div>
+
+   <!-- PROJECT -->
+<div class="glass rounded-xl overflow-hidden shadow hover:scale-105 transition">
+
+  <!-- ONLY ONE IMAGE -->
+  <img src="admin.png" class="w-full h-40 object-cover">
+
+  <div class="p-5">
+    <h3 class="font-semibold text-lg">Hospital Management System</h3>
+
+    <p class="text-sm text-gray-600 mt-2">
+      System for managing hospital operations.
+    </p>
+
+    <div class="mt-4">
+      <button onclick="openModal('hospital')"
+        class="text-sm text-orange-500 hover:underline">
+        View Details
+      </button>
+    </div>
+  </div>
+</div>
+
+    <!-- PROJECT 3 -->
+    <div class="glass rounded-xl overflow-hidden shadow hover:scale-105 transition">
+
+      <img src="blog1.png" class="w-full h-40 object-cover">
+
+      <div class="p-5">
+        <h3 class="font-semibold text-lg">Blog Website</h3>
+
+        <p class="text-sm text-gray-600 mt-2">
+          Dynamic blog platform.
+        </p>
+
+        <div class="mt-4">
+          <button onclick="openModal('blog')"
+            class="text-sm text-orange-500 hover:underline">
+            View Details
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- MODAL -->
+<div id="modal" class="fixed inset-0 bg-black/60 hidden items-center justify-center z-50">
+
+  <div class="bg-white max-w-2xl w-full p-6 rounded-xl relative">
+
+    <!-- CLOSE -->
+    <button onclick="closeModal()" class="absolute top-3 right-4 text-lg">✖</button>
+
+    <!-- IMAGE -->
+    <img id="modalImage" class="w-full h-56 object-cover rounded mb-4">
+
+    <!-- SLIDER -->
+    <div class="flex justify-between mb-4">
+      <button onclick="prevImage()" class="bg-gray-200 px-3 py-1 rounded">⬅</button>
+      <button onclick="nextImage()" class="bg-gray-200 px-3 py-1 rounded">➡</button>
+    </div>
+
+    <!-- TITLE -->
+    <h3 id="modalTitle" class="text-xl font-semibold mb-2"></h3>
+
+    <!-- CONTENT -->
+    <p id="modalContent" class="text-sm text-gray-600 whitespace-pre-line"></p>
+
+    <!-- TECH -->
+    <div id="modalTech" class="flex flex-wrap gap-2 mt-4 text-xs"></div>
+
+  </div>
+</div>
+
+
+<!-- SKILLS (NEW UI) -->
+<section id="skills" class="px-10 py-16 bg-white">
+  <h2 class="text-2xl text-center mb-10 font-semibold">Skills</h2>
+
+  <div class="max-w-4xl mx-auto space-y-8">
+
+    <!-- FRONTEND -->
+    <div>
+      <h3 class="text-orange-500 mb-3 font-semibold">Frontend</h3>
+      <div class="flex flex-wrap gap-3">
+        <span class="px-4 py-2 bg-gray-100 rounded-full hover:bg-orange-100 transition">HTML</span>
+        <span class="px-4 py-2 bg-gray-100 rounded-full hover:bg-orange-100 transition">CSS</span>
+        <span class="px-4 py-2 bg-gray-100 rounded-full hover:bg-orange-100 transition">Tailwind</span>
+        <span class="px-4 py-2 bg-gray-100 rounded-full hover:bg-orange-100 transition">JavaScript</span>
+        <span class="px-4 py-2 bg-gray-100 rounded-full hover:bg-orange-100 transition">React</span>
+      </div>
+    </div>
+
+    <!-- BACKEND -->
+    <div>
+      <h3 class="text-orange-500 mb-3 font-semibold">Backend</h3>
+      <div class="flex flex-wrap gap-3">
+        <span class="px-4 py-2 bg-gray-100 rounded-full hover:bg-orange-100 transition">PHP</span>
+        <span class="px-4 py-2 bg-gray-100 rounded-full hover:bg-orange-100 transition">Node.js</span>
+      </div>
+    </div>
+
+    <!-- DATABASE -->
+    <div>
+      <h3 class="text-orange-500 mb-3 font-semibold">Database</h3>
+      <div class="flex flex-wrap gap-3">
+        <span class="px-4 py-2 bg-gray-100 rounded-full hover:bg-orange-100 transition">MySQL</span>
+        <span class="px-4 py-2 bg-gray-100 rounded-full hover:bg-orange-100 transition">MongoDB</span>
+      </div>
+    </div>
+
+<!-- LANGUAGES -->
+<div class="mt-8">
+  <h3 class="text-orange-500 font-semibold mb-4">Languages</h3>
+  
+  <div class="flex flex-wrap gap-3">
+    <span class="px-4 py-2 bg-gray-100 rounded-full hover:bg-orange-100 transition">Gujarati (Native)</span>
+    <span class="px-4 py-2 bg-gray-100 rounded-full hover:bg-orange-100 transition">Hindi (Fluent)</span>
+    <span class="px-4 py-2 bg-gray-100 rounded-full hover:bg-orange-100 transition">English (Professional)</span>
+  </div>
+</div>
+
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="px-10 py-20">
+  <h2 class="text-3xl text-center font-semibold mb-12">Education</h2>
+
+  <div class="max-w-4xl mx-auto space-y-6">
+
+    <!-- BCA -->
+    <div class="glass p-6 rounded-xl hover:scale-105 transition">
+      <h3 class="text-lg font-semibold text-orange-500">
+        Bachelor of Computer Applications (BCA)
+      </h3>
+
+      <p class="text-sm text-gray-600 mt-1">
+        Sutex Bank College of Computer Applications and Science
+      </p>
+
+      <p class="text-sm text-gray-500">
+        Affiliated to Veer Narmad South Gujarat University (VNSGU)
+      </p>
+
+      <p class="text-sm text-gray-500 mt-2">
+        2023 – 2026
+      </p>
+    </div>
+
+    <!-- 12th -->
+    <div class="glass p-6 rounded-xl hover:scale-105 transition">
+      <h3 class="text-lg font-semibold text-orange-500">
+        Higher Secondary (12th)
+      </h3>
+
+      <p class="text-sm text-gray-600 mt-1">
+       Shishukunj School (kargil chowk)
+      </p>
+
+      <p class="text-sm text-gray-500">
+        Gujarat Board (GSEB)
+      </p>
+
+      <p class="text-sm text-gray-500 mt-2">
+        2022 – 2023
+      </p>
+    </div>
+
+    <!-- 10th -->
+    <div class="glass p-6 rounded-xl hover:scale-105 transition">
+      <h3 class="text-lg font-semibold text-orange-500">
+        Secondary School (10th)
+      </h3>
+
+      <p class="text-sm text-gray-600 mt-1">
+      P.& B. Oriental School in Rajkot
+      </p>
+
+      <p class="text-sm text-gray-500">
+        Gujarat Board (GSEB)
+      </p>
+
+      <p class="text-sm text-gray-500 mt-2">
+        2020 – 2021
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="px-10 py-20 text-center">
+  <h2 class="text-3xl font-semibold mb-6">About Me</h2>
+
+  <p class="max-w-2xl mx-auto text-gray-600 leading-relaxed">
+    I am a passionate and dedicated IT student currently pursuing a Bachelor of Computer Applications (BCA) from Sutex Bank College of Computer Applications and Science, affiliated with Veer Narmad South Gujarat University. I have a strong interest in full stack web development and enjoy building real-world applications that are both functional and user-friendly.
+    
+    <br><br>
+
+    I have hands-on experience with technologies like HTML, CSS, JavaScript, React, PHP, and MySQL. One of my key projects, <span class="text-orange-500 font-medium">NovelNest</span>, is an online bookstore system with features like OTP-based login, cart management, and admin panel.
+
+    <br><br>
+
+    I am always eager to learn new technologies, improve my skills, and build innovative solutions that solve real problems.
+  </p>
+</section>
+
+<!-- CONNECT -->
+<section id="connect" class="px-10 py-20 text-center">
+  <h2 class="text-3xl font-semibold mb-6">Let’s Connect</h2>
+
+  <p class="text-gray-600 mb-8">
+    Feel free to connect with me for opportunities, collaborations, or just a quick chat.
+  </p>
+
+  <div class="flex justify-center gap-6 flex-wrap">
+
+    <a href="https://github.com/jikadrariddhi73593-ui/js" target="_blank"
+       class="glass px-6 py-3 rounded-lg hover:scale-105 transition">
+       💻 GitHub
+    </a>
+
+    <a href="https://linkedin.com/in/yourprofile" target="_blank"
+       class="glass px-6 py-3 rounded-lg hover:scale-105 transition">
+       🔗 LinkedIn
+    </a>
+
+    <a href="mailto:jikadrariddhi73593@gmail.com"
+   class="glass px-6 py-3 rounded-lg hover:scale-105 transition">
+   📧 Email
+</a>
+
+  </div>
+</section>
+
+<footer class="text-center py-6 text-gray-400 text-sm">
+  © 2026 Riddhi Jikadra
+</footer>
+
+<script>
+let currentImages = [];
+let currentIndex = 0;
+
+function openModal(project){
+  const modal = document.getElementById("modal");
+  const title = document.getElementById("modalTitle");
+  const content = document.getElementById("modalContent");
+
+  modal.classList.remove("hidden");
+  modal.classList.add("flex");
+  currentIndex = 0;
+
+  if(project === "novelnest"){
+    title.innerText = "NovelNest";
+    currentImages = ["category.png","home.png","deals.png","hello.png","novel.png"];
+    content.innerText = "Full stack bookstore with OTP login & cart.";
+  }
+
+  if(project === "student"){
+    title.innerText = "Student System";
+    currentImages = ["student1.png","student2.png"];
+    content.innerText = "CRUD system for managing student data.";
+  }
+
+  if(project === "blog"){
+    title.innerText = "Blog Website";
+    currentImages = ["blog1.png","blog2.png"];
+    content.innerText = "Dynamic blog system.";
+  }
+
+  // ✅ FIXED HOSPITAL
+  if(project === "hospital"){
+    title.innerText = "Hospital Management System";
+
+    currentImages = [
+      "admin.png",
+      "doctor.png",
+      "nurse.png",
+      "reception.png"
+    ];
+
+    content.innerText =
+    "Problem:\nManaging hospital manually is difficult.\n\n" +
+    "Solution:\nSystem manages admin, doctor, nurse and reception.";
+  }
+
+  updateImage();
+}
+
+function updateImage(){
+  document.getElementById("modalImage").src = currentImages[currentIndex];
+}
+
+function nextImage(){
+  currentIndex = (currentIndex + 1) % currentImages.length;
+  updateImage();
+}
+
+function prevImage(){
+  currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+  updateImage();
+}
+
+function closeModal(){
+  document.getElementById("modal").classList.add("hidden");
+}
+</script>
+
+</body>
+</html>
